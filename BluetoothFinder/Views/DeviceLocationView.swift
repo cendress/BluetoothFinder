@@ -91,7 +91,7 @@ struct DeviceLocationView: View {
     //MARK: - Circle size method
     
     private func circleSize(geometry: GeometryProxy) -> CGFloat {
-        let normalizedRSSI = min(max(Double(device.rssi + 100) / 70.0, 0.2), 1.0)
+        let normalizedRSSI = min(max(1.0 - (Double(device.rssi + 100) / 70.0), 0.2), 1.0)
         return normalizedRSSI * geometry.size.width
     }
     
