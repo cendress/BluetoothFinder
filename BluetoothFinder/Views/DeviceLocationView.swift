@@ -17,14 +17,39 @@ struct DeviceLocationView: View {
         return device.rssi > -60 ? Color.green : Color.red
     }
     
+    private var distanceString: String {
+        guard let txPower = device.txPower else { return "Unknown" }
+        
+        let ratio = Double(device.rssi) / Double(txPower)
+        let meters: Double
+        
+        if ratio < 1.0 {
+            meters = pow(ratio, 10)
+        } else {
+            meters = (0.89976) * pow(ratio, 7.7095) + 0.111
+        }
+        
+        let feet = meters * 3.28084
+        return String(format: "%.2f feet", feet)
+    }
+    
     var body: some View {
         GeometryReader { geometry in
+            VStack {
+                Spacer()
+                
                 Circle()
                     .fill(Color.white)
                     .shadow(radius: 10)
                     .padding()
                     .frame(width: circleSize(geometry: geometry), height: circleSize(geometry: geometry))
-                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                
+                Spacer()
+                
+                Text("Estimated Distance: \(distanceString)")
+                    .padding()
+            }
+            .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             .onAppear {
                 prepareHaptics()
             }
@@ -76,6 +101,6 @@ struct DeviceLocationView: View {
 }
 
 #Preview {
-    let sampleDevice = BluetoothDevice(name: "Router", rssi: 0)
+    let sampleDevice = BluetoothDevice(name: "Router", rssi: 0, txPower: nil)
     return DeviceLocationView(device: sampleDevice)
 }

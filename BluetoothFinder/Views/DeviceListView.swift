@@ -25,7 +25,7 @@ struct DeviceListView: View {
                                 HStack {
                                     Text(device.name)
                                     Spacer()
-                                    Text("RSSI: \(device.rssi)")
+                                    Text("Signal Strength (RSSI): \(device.rssi)")
                                 }
                             }
                         }
