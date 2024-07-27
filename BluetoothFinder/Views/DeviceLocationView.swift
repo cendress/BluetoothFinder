@@ -24,9 +24,16 @@ struct DeviceLocationView: View {
     private var distanceString: String {
         guard let txPower = device.txPower else { return "Unknown" }
         
-        let ratio = Double(device.rssi) / Double(txPower)
-        let meters: Double = ratio < 1.0 ? pow(ratio, 10) : 0.89976 * pow(ratio, 7.7095) + 0.111
+        let rssi = Double(device.rssi)
+        let txPowerDouble = Double(txPower)
+        let pathLossExponent = 2.0
+        
+        let ratioDB = txPowerDouble - rssi
+        let ratioLinear = pow(10, ratioDB / (10 * pathLossExponent))
+        
+        let meters = ratioLinear
         let feet = meters * 3.28084
+        
         return String(format: "%.2f feet", feet)
     }
     
@@ -52,6 +59,7 @@ struct DeviceLocationView: View {
                     VStack {
                         Image(systemName: "exclamationmark.triangle")
                             .foregroundColor(.orange)
+                            .padding(.bottom, 5)
                         Text("Distance Estimation Unavailable")
                             .italic()
                     }
