@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import Combine
 
-struct BluetoothDevice: Identifiable {
+class BluetoothDevice: Identifiable, ObservableObject {
     // Use the device's name as the unique identifier
     var id: String { name }
-    let name: String
-    let rssi: Int
+    @Published var name: String
+    @Published var rssi: Int
     // TX power might not be available for all devices
-    let txPower: Int?
+    @Published var txPower: Int?
+    
+    init(name: String, rssi: Int, txPower: Int?) {
+        self.name = name
+        self.rssi = rssi
+        self.txPower = txPower
+    }
 }
