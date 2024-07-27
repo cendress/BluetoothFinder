@@ -12,4 +12,6 @@ struct BluetoothDevice: Identifiable {
     var id: String { name }
     let name: String
     let rssi: Int
+    // Transmit power might not be available for all devices
+    let txPower: Int?
 }
