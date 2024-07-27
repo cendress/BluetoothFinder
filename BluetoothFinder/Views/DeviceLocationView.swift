@@ -9,6 +9,7 @@ import CoreHaptics
 import SwiftUI
 
 struct DeviceLocationView: View {
+    @Environment(\.dismiss) var dismiss
     @State private var engine: CHHapticEngine?
     
     let device: BluetoothDevice
@@ -60,6 +61,19 @@ struct DeviceLocationView: View {
         .background(backgroundColor)
         .navigationTitle("Device Location")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundStyle(.black)
+                    }
+                }
+            }
+        }
     }
     
     // Calculate circle size based on RSSI value
