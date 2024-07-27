@@ -10,6 +10,21 @@ import Foundation
 
 class DeviceListViewModel: ObservableObject {
     @Published var devices: [BluetoothDevice] = []
+    private var bluetoothManager = BluetoothManager()
+    private var cancellables = Set<AnyCancellable>()
     
-    // Add functions for bluetooth scanning
+    init() {
+        setupBindings()
+    }
+    
+    private func setupBindings() {
+        bluetoothManager.$discoveredDevices
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.devices, on: self)
+            .store(in: &cancellables)
+    }
+    
+    func startScanning() {
+        bluetoothManager.startScanning()
+    }
 }

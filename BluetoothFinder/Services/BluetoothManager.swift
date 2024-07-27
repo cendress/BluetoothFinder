@@ -10,7 +10,7 @@ import Foundation
 
 class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     private var centralManager: CBCentralManager!
-    var discoveredDevices: [BluetoothDevice] = []
+    @Published var discoveredDevices: [BluetoothDevice] = []
 
     override init() {
         super.init()
