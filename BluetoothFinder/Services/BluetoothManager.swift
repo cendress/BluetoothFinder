@@ -32,8 +32,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
 
     // Triggers when a peripheral is found
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        let txPower = advertisementData[CBAdvertisementDataTxPowerLevelKey] as? Int
-        let device = BluetoothDevice(name: peripheral.name ?? "Unknown", rssi: RSSI.intValue, txPower: txPower)
+        let device = BluetoothDevice(name: peripheral.name ?? "Unknown", rssi: RSSI.intValue)
         // Append the device to discovered devices if it hasn't already
         if !discoveredDevices.contains(where: {$0.id == device.id}) {
             discoveredDevices.append(device)

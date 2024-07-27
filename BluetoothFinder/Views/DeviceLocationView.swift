@@ -19,18 +19,18 @@ struct DeviceLocationView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            Circle()
-                .fill(Color.white)
-                .shadow(radius: 10)
-                .padding()
-                .frame(width: circleSize(geometry: geometry), height: circleSize(geometry: geometry))
-                .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-                .onAppear {
-                    prepareHaptics()
-                }
-                .onChange(of: device.rssi) { newValue, oldValue in
-                    performHapticFeedback(rssi: newValue)
-                }
+                Circle()
+                    .fill(Color.white)
+                    .shadow(radius: 10)
+                    .padding()
+                    .frame(width: circleSize(geometry: geometry), height: circleSize(geometry: geometry))
+                    .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
+            .onAppear {
+                prepareHaptics()
+            }
+            .onChange(of: device.rssi) { newValue, oldValue in
+                performHapticFeedback(rssi: newValue)
+            }
         }
         .background(backgroundColor)
         .navigationTitle("Device Location")
