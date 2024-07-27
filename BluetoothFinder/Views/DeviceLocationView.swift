@@ -9,6 +9,9 @@ import CoreHaptics
 import SwiftUI
 
 struct DeviceLocationView: View {
+    
+    //MARK: - Properties
+    
     @Environment(\.dismiss) var dismiss
     @State private var engine: CHHapticEngine?
     
@@ -27,6 +30,8 @@ struct DeviceLocationView: View {
         return String(format: "%.2f feet", feet)
     }
     
+    //MARK: - View body
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -40,8 +45,18 @@ struct DeviceLocationView: View {
                 
                 Spacer()
                 
-                Text("Estimated Distance: \(distanceString)")
+                // If device doesn't possess txPower, show image and text to indicate that distance estimation is not available
+                if device.txPower != nil {
+                    Text("Estimated Distance: \(distanceString)")
+                } else {
+                    VStack {
+                        Image(systemName: "exclamationmark.triangle")
+                            .foregroundColor(.orange)
+                        Text("Distance Estimation Unavailable")
+                            .italic()
+                    }
                     .padding()
+                }
             }
             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             .onAppear(perform: prepareHaptics)
@@ -65,10 +80,14 @@ struct DeviceLocationView: View {
         }
     }
     
+    //MARK: - Circle size method
+    
     private func circleSize(geometry: GeometryProxy) -> CGFloat {
         let normalizedRSSI = min(max(Double(device.rssi + 100) / 70.0, 0.2), 1.0)
         return normalizedRSSI * geometry.size.width
     }
+    
+    //MARK: - Haptics
     
     private func prepareHaptics() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
