@@ -24,8 +24,10 @@ struct DeviceListView: View {
                             NavigationLink(destination: DeviceLocationView(device: device)) {
                                 HStack {
                                     Text(device.name)
+                                    
                                     Spacer()
-                                    Text("Signal Strength (RSSI): \(device.rssi)")
+                                    
+                                    Text("RSSI: \(device.rssi)")
                                 }
                             }
                         }
