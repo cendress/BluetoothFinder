@@ -335,6 +335,8 @@
 				DEVELOPMENT_TEAM = 42VHV36Q58;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Our app needs to stay connected to Bluetooth devices to ensure continuous device tracking and provide real-time updates on device status.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Our app uses Bluetooth to connect with nearby devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -368,6 +370,8 @@
 				DEVELOPMENT_TEAM = 42VHV36Q58;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Our app needs to stay connected to Bluetooth devices to ensure continuous device tracking and provide real-time updates on device status.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Our app uses Bluetooth to connect with nearby devices.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
