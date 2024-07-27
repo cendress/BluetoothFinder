@@ -12,23 +12,32 @@ struct DeviceListView: View {
     @State private var selectedDevice: BluetoothDevice?
     
     var body: some View {
-        List {
-            ForEach(viewModel.devices, id: \.id) { device in
-                NavigationLink(destination: DeviceLocationView(device: device)) {
-                    HStack {
-                        Text(device.name)
-                        Spacer()
-                        Text("RSSI: \(device.rssi)")
+            Group {
+                if viewModel.devices.isEmpty {
+                    Text("No devices found. Tap the Scan button to search for devices.")
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                } else {
+                    List {
+                        ForEach(viewModel.devices, id: \.id) { device in
+                            NavigationLink(destination: DeviceLocationView(device: device)) {
+                                HStack {
+                                    Text(device.name)
+                                    Spacer()
+                                    Text("RSSI: \(device.rssi)")
+                                }
+                            }
+                        }
                     }
                 }
             }
-        }
-        .toolbar {
-            Button("Scan", systemImage: "antenna.radiowaves.left.and.right") {
-                viewModel.startScanning()
+            .toolbar {
+                Button("Scan", systemImage: "antenna.radiowaves.left.and.right") {
+                    viewModel.startScanning()
+                }
             }
-        }
-        .navigationTitle("Nearby Devices")
+            .navigationTitle("Nearby Devices")
     }
 }
 
