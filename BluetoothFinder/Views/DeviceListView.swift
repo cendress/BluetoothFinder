@@ -11,7 +11,6 @@ struct DeviceListView: View {
     @ObservedObject var viewModel: DeviceListViewModel
     
     var body: some View {
-        NavigationStack {
             List(viewModel.devices) { device in
                 HStack {
                     Text(device.name)
@@ -20,7 +19,6 @@ struct DeviceListView: View {
                 }
             }
             .navigationTitle("Nearby Devices")
-        }
     }
 }
 
