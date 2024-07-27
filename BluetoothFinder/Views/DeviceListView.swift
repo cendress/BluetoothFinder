@@ -9,13 +9,18 @@ import SwiftUI
 
 struct DeviceListView: View {
     @ObservedObject var viewModel: DeviceListViewModel
-
+    @State private var selectedDevice: BluetoothDevice?
+    
     var body: some View {
-        List(viewModel.devices) { device in
-            HStack {
-                Text(device.name)
-                Spacer()
-                Text("RSSI: \(device.rssi)")
+        List {
+            ForEach(viewModel.devices, id: \.id) { device in
+                NavigationLink(destination: DeviceLocationView(device: device)) {
+                    HStack {
+                        Text(device.name)
+                        Spacer()
+                        Text("RSSI: \(device.rssi)")
+                    }
+                }
             }
         }
         .toolbar {
