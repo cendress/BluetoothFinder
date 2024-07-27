@@ -13,6 +13,7 @@
 		9DD643442C54FF4800CF4FBF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD643432C54FF4800CF4FBF /* Preview Assets.xcassets */; };
 		9DD643512C5517C900CF4FBF /* BluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643502C5517C900CF4FBF /* BluetoothDevice.swift */; };
 		9DD643532C55189300CF4FBF /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643522C55189300CF4FBF /* DeviceListViewModel.swift */; };
+		9DD643552C551AC600CF4FBF /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643542C551AC600CF4FBF /* DeviceListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		9DD643432C54FF4800CF4FBF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9DD643502C5517C900CF4FBF /* BluetoothDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothDevice.swift; sourceTree = "<group>"; };
 		9DD643522C55189300CF4FBF /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
+		9DD643542C551AC600CF4FBF /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				9DD6433E2C54FF4700CF4FBF /* ContentView.swift */,
+				9DD643542C551AC600CF4FBF /* DeviceListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				9DD643532C55189300CF4FBF /* DeviceListViewModel.swift in Sources */,
 				9DD643512C5517C900CF4FBF /* BluetoothDevice.swift in Sources */,
+				9DD643552C551AC600CF4FBF /* DeviceListView.swift in Sources */,
 				9DD6433F2C54FF4700CF4FBF /* ContentView.swift in Sources */,
 				9DD6433D2C54FF4700CF4FBF /* BluetoothFinderApp.swift in Sources */,
 			);
