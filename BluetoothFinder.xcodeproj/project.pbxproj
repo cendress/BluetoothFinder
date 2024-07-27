@@ -51,9 +51,12 @@
 		9DD6433B2C54FF4700CF4FBF /* BluetoothFinder */ = {
 			isa = PBXGroup;
 			children = (
-				9DD6433C2C54FF4700CF4FBF /* BluetoothFinderApp.swift */,
-				9DD6433E2C54FF4700CF4FBF /* ContentView.swift */,
-				9DD643402C54FF4800CF4FBF /* Assets.xcassets */,
+				9DD6434E2C55084600CF4FBF /* Application */,
+				9DD6434A2C5507D600CF4FBF /* Models */,
+				9DD6434C2C5507F000CF4FBF /* Views */,
+				9DD6434B2C5507DF00CF4FBF /* ViewModels */,
+				9DD6434D2C55080700CF4FBF /* Services */,
+				9DD6434F2C55087600CF4FBF /* Resources */,
 				9DD643422C54FF4800CF4FBF /* Preview Content */,
 			);
 			path = BluetoothFinder;
@@ -65,6 +68,51 @@
 				9DD643432C54FF4800CF4FBF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9DD6434A2C5507D600CF4FBF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9DD6434B2C5507DF00CF4FBF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9DD6434C2C5507F000CF4FBF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DD6433E2C54FF4700CF4FBF /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9DD6434D2C55080700CF4FBF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9DD6434E2C55084600CF4FBF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				9DD6433C2C54FF4700CF4FBF /* BluetoothFinderApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		9DD6434F2C55087600CF4FBF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9DD643402C54FF4800CF4FBF /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
