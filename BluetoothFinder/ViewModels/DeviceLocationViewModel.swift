@@ -15,6 +15,19 @@ class DeviceLocationViewModel: ObservableObject {
         self.device = device
     }
     
+    var proximityMessage: String {
+        switch device.rssi {
+        case -40...0:
+            return "You're very close!"
+        case -60..<(-40):
+            return "Getting closer..."
+        case -80..<(-60):
+            return "Still far away..."
+        default:
+            return "Very far away..."
+        }
+    }
+    
     var backgroundColor: Color {
         device.rssi > -60 ? .green : .red
     }
