@@ -18,9 +18,12 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if central.state == .poweredOn {
-            // If Bluetooth is powered on, start scanning for peripherals
+        switch central.state {
+            // Start scanning only when Bluetooth is powered on
+        case .poweredOn:
             startScanning()
+        default:
+            print("Central is not powered on: \(central.state)")
         }
     }
     
@@ -35,14 +38,14 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
         let newName = peripheral.name ?? "Unknown"
         let identifier = peripheral.identifier
         
-            // Check if the device is already discovered using the UUID
-            if let index = self.discoveredDevices.firstIndex(where: { $0.id == identifier }) {
-                // Update RSSI if device is already known
-                self.discoveredDevices[index].rssi = RSSI.intValue
-            } else {
-                // Add new device if not already known
-                let newDevice = BluetoothDevice(id: identifier, name: newName, rssi: RSSI.intValue, txPower: txPower)
-                self.discoveredDevices.append(newDevice)
-            }
+        // Check if the device is already discovered using the UUID
+        if let index = self.discoveredDevices.firstIndex(where: { $0.id == identifier }) {
+            // Update RSSI if device is already known
+            self.discoveredDevices[index].rssi = RSSI.intValue
+        } else {
+            // Add new device if not already known
+            let newDevice = BluetoothDevice(id: identifier, name: newName, rssi: RSSI.intValue, txPower: txPower)
+            self.discoveredDevices.append(newDevice)
+        }
     }
 }
