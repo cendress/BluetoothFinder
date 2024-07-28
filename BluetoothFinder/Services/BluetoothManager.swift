@@ -26,14 +26,14 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     
     func startScanning() {
         // May want to add some scanning filters
-        centralManager.scanForPeripherals(withServices: nil, options: nil)
+        centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerRestoredStateScanOptionsKey : NSNumber(value: false)])
     }
     
     // Triggers when a peripheral is found
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         let txPower = advertisementData[CBAdvertisementDataTxPowerLevelKey] as? Int
         let newName = peripheral.name ?? "Unknown"
-        let identifier = peripheral.identifier 
+        let identifier = peripheral.identifier
         
         // Check if the device is already discovered using the UUID
         if let index = discoveredDevices.firstIndex(where: { $0.id == identifier }) {
