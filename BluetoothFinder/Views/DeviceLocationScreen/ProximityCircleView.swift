@@ -10,8 +10,11 @@ import SwiftUI
 struct ProximityCircleView: View {
     var rssi: Int
     var geometry: GeometryProxy
-    
     private let closeProximityThreshold = -40
+    
+    private var isClose: Bool {
+        rssi > closeProximityThreshold
+    }
     
     var body: some View {
         Circle()
@@ -26,10 +29,6 @@ struct ProximityCircleView: View {
             .shadow(radius: 10)
             .padding()
             .frame(width: circleSize(), height: circleSize())
-    }
-    
-    private var isClose: Bool {
-        rssi > closeProximityThreshold
     }
     
     private func circleSize() -> CGFloat {
