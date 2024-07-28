@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ProximityCircleView: View {
-    var rssi: Int
+    @ObservedObject var viewModel: DeviceLocationViewModel
     var geometry: GeometryProxy
     private let closeProximityThreshold = -40
     
     private var isClose: Bool {
-        rssi > closeProximityThreshold
+        viewModel.device.rssi > closeProximityThreshold
     }
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ProximityCircleView: View {
     }
     
     private func circleSize() -> CGFloat {
-        let normalizedRSSI = min(max(1.0 - (Double(rssi + 100) / 70.0), 0.2), 1.0)
+        let normalizedRSSI = min(max(1.0 - (Double(viewModel.device.rssi + 100) / 70.0), 0.2), 1.0)
         return normalizedRSSI * geometry.size.width
     }
 }
