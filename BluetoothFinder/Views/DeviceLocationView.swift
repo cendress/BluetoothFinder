@@ -34,7 +34,7 @@ struct DeviceLocationView: View {
         let meters = ratioLinear
         let feet = meters * 3.28084
         
-        return String(format: "%.2f feet", feet)
+        return String(format: "%.0f feet", feet)
     }
     
     //MARK: - View body
@@ -99,6 +99,7 @@ struct DeviceLocationView: View {
     
     private func prepareHaptics() {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        
         do {
             self.engine = try CHHapticEngine()
             try engine?.start()
@@ -108,7 +109,7 @@ struct DeviceLocationView: View {
     }
     
     private func performHapticFeedback() {
-        guard let engine = engine, CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        guard let engine = engine else { return }
         
         let normalizedRSSI = 1 - min(max(Double(device.rssi) / -100, 0), 1)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(normalizedRSSI))
