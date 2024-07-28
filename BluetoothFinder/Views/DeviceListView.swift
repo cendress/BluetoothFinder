@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DeviceListView: View {
     @ObservedObject var viewModel: DeviceListViewModel
-    @State private var selectedDevice: BluetoothDevice?
     
     var body: some View {
             Group {

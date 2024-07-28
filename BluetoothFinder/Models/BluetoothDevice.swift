@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 struct BluetoothDevice: Identifiable {
     // Use the device's name as the unique identifier
