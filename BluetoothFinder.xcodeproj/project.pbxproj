@@ -106,10 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9DD6433E2C54FF4700CF4FBF /* ContentView.swift */,
-				9DD643542C551AC600CF4FBF /* DeviceListView.swift */,
-				9DD6435D2C5654F500CF4FBF /* DeviceRowView.swift */,
-				9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */,
-				9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */,
+				9DD643632C56563600CF4FBF /* DeviceListScreen */,
 				9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */,
 			);
 			path = Views;
@@ -137,6 +134,17 @@
 				9DD643402C54FF4800CF4FBF /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9DD643632C56563600CF4FBF /* DeviceListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9DD643542C551AC600CF4FBF /* DeviceListView.swift */,
+				9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */,
+				9DD6435D2C5654F500CF4FBF /* DeviceRowView.swift */,
+				9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */,
+			);
+			path = DeviceListScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
