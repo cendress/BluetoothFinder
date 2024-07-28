@@ -19,13 +19,13 @@ struct DeviceLocationView: View {
             VStack {
                 Spacer()
                 
-                ProximityCircleView(rssi: $viewModel.device.rssi, geometry: geometry)
+                ProximityCircleView(rssi: device.rssi, geometry: geometry)
                 
                 ProximityMessageView(viewModel: viewModel)
                 
                 Spacer()
                 
-                DistanceInformationView(device: viewModel.device)
+                DistanceInformationView(device: device)
             }
             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             .onAppear(perform: viewModel.startHaptics)
