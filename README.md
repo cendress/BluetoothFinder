@@ -38,6 +38,10 @@ The design of the BluetoothFinder app emphasizes user experience, technical robu
 ## Future Improvements
 - Enhance the distance calculation algorithm for better accuracy.
 - Provide options to filter and sort the device list.
+- Improve haptic response based on distance.
+
+## Video
+https://github.com/user-attachments/assets/7342a5a7-8c0f-4656-9adb-72c8c110dfb3
 
 ## Screenshots
 ![01](https://github.com/user-attachments/assets/0035d159-4621-4ec3-90fb-53eb66bc1ada)
