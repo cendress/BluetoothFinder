@@ -32,7 +32,7 @@ struct DeviceRowView: View {
 }
 
 #Preview {
-    let sampleDevice = BluetoothDevice(name: "Personal Computer", rssi: -30, txPower: nil)
+    let sampleDevice = BluetoothDevice(id: UUID(), name: "Personal Computer", rssi: -30, txPower: nil)
     
     return DeviceRowView(device: sampleDevice)
 }

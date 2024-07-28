@@ -45,7 +45,7 @@ struct DeviceLocationView: View {
 }
 
 #Preview {
-    let sampleDevice = BluetoothDevice(name: "Router", rssi: 0, txPower: nil)
+    let sampleDevice = BluetoothDevice(id: UUID(), name: "Router", rssi: 0, txPower: nil)
     
     return DeviceLocationView(viewModel: DeviceLocationViewModel(device: sampleDevice))
 }

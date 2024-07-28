@@ -8,8 +8,7 @@
 import Foundation
 
 struct BluetoothDevice: Identifiable {
-    // Use the device's name as the unique identifier
-    var id: String { name }
+    let id: UUID
     let name: String
     var rssi: Int
     // TX power might not be available for all devices

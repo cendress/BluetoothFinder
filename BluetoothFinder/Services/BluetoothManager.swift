@@ -33,11 +33,15 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         let txPower = advertisementData[CBAdvertisementDataTxPowerLevelKey] as? Int
         let newName = peripheral.name ?? "Unknown"
+        let identifier = peripheral.identifier 
         
-        if let index = discoveredDevices.firstIndex(where: {$0.name == newName}) {
+        // Check if the device is already discovered using the UUID
+        if let index = discoveredDevices.firstIndex(where: { $0.id == identifier }) {
+            // Update RSSI if device is already known
             discoveredDevices[index].rssi = RSSI.intValue
         } else {
-            let newDevice = BluetoothDevice(name: newName, rssi: RSSI.intValue, txPower: txPower)
+            // Add new device if not already known
+            let newDevice = BluetoothDevice(id: identifier, name: newName, rssi: RSSI.intValue, txPower: txPower)
             discoveredDevices.append(newDevice)
         }
     }
