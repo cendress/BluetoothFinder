@@ -21,22 +21,6 @@ struct DeviceLocationView: View {
         device.rssi > -60 ? .green : .red
     }
     
-    private var distanceString: String {
-        guard let txPower = device.txPower else { return "Unknown" }
-        
-        let rssi = Double(device.rssi)
-        let txPowerDouble = Double(txPower)
-        let pathLossExponent = 2.0
-        
-        let ratioDB = txPowerDouble - rssi
-        let ratioLinear = pow(10, ratioDB / (10 * pathLossExponent))
-        
-        let meters = ratioLinear
-        let feet = meters * 3.28084
-        
-        return String(format: "%.0f feet", feet)
-    }
-    
     //MARK: - View body
     
     var body: some View {
@@ -53,18 +37,7 @@ struct DeviceLocationView: View {
                 Spacer()
                 
                 // If device doesn't possess txPower, show image and text to indicate that distance estimation is not available
-                if device.txPower != nil {
-                    Text("Estimated Distance: \(distanceString)")
-                } else {
-                    VStack {
-                        Image(systemName: "exclamationmark.triangle")
-                            .foregroundColor(.orange)
-                            .padding(.bottom, 5)
-                        Text("Distance Estimation Unavailable")
-                            .italic()
-                    }
-                    .padding()
-                }
+                DistanceInformationView(device: device)
             }
             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
             .onAppear(perform: prepareHaptics)

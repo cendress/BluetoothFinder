@@ -19,6 +19,7 @@
 		9DD6435E2C5654F500CF4FBF /* DeviceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6435D2C5654F500CF4FBF /* DeviceRowView.swift */; };
 		9DD643602C5655AC00CF4FBF /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */; };
 		9DD643622C5655ED00CF4FBF /* EmptyDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */; };
+		9DD643672C5662B900CF4FBF /* DistanceInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643662C5662B900CF4FBF /* DistanceInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		9DD6435D2C5654F500CF4FBF /* DeviceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowView.swift; sourceTree = "<group>"; };
 		9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDeviceView.swift; sourceTree = "<group>"; };
+		9DD643662C5662B900CF4FBF /* DistanceInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceInformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,7 @@
 			children = (
 				9DD6433E2C54FF4700CF4FBF /* ContentView.swift */,
 				9DD643632C56563600CF4FBF /* DeviceListScreen */,
-				9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */,
+				9DD643682C5663AB00CF4FBF /* DeviceLocationScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -145,6 +147,15 @@
 				9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */,
 			);
 			path = DeviceListScreen;
+			sourceTree = "<group>";
+		};
+		9DD643682C5663AB00CF4FBF /* DeviceLocationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */,
+				9DD643662C5662B900CF4FBF /* DistanceInformationView.swift */,
+			);
+			path = DeviceLocationScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				9DD643532C55189300CF4FBF /* DeviceListViewModel.swift in Sources */,
 				9DD6435C2C55313700CF4FBF /* DeviceLocationView.swift in Sources */,
 				9DD6435E2C5654F500CF4FBF /* DeviceRowView.swift in Sources */,
+				9DD643672C5662B900CF4FBF /* DistanceInformationView.swift in Sources */,
 				9DD643602C5655AC00CF4FBF /* DeviceList.swift in Sources */,
 				9DD643512C5517C900CF4FBF /* BluetoothDevice.swift in Sources */,
 				9DD643552C551AC600CF4FBF /* DeviceListView.swift in Sources */,
