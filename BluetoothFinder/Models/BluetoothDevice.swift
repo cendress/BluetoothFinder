@@ -11,7 +11,7 @@ struct BluetoothDevice: Identifiable {
     // Use the device's name as the unique identifier
     var id: String { name }
     let name: String
-    let rssi: Int
+    var rssi: Int
     // TX power might not be available for all devices
     let txPower: Int?
 }

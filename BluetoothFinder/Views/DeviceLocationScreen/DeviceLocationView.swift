@@ -10,7 +10,7 @@ import SwiftUI
 
 struct DeviceLocationView: View {
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var viewModel: DeviceLocationViewModel
+    @StateObject var viewModel: DeviceLocationViewModel
     
     var body: some View {
         GeometryReader { geometry in

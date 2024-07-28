@@ -9,7 +9,7 @@ import SwiftUI
 
 class DeviceLocationViewModel: ObservableObject {
     @Published var hapticManager = HapticManager()
-    let device: BluetoothDevice
+    var device: BluetoothDevice
     
     init(device: BluetoothDevice) {
         self.device = device

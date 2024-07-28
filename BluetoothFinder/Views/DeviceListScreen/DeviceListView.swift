@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeviceListView: View {
-    @ObservedObject var viewModel: DeviceListViewModel
+    @StateObject var viewModel: DeviceListViewModel
     
     var body: some View {
         Group {

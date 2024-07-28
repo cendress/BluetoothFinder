@@ -11,12 +11,19 @@ struct ProximityCircleView: View {
     var rssi: Int
     var geometry: GeometryProxy
 
+    private let closeProximityThreshold = -40
+    
     var body: some View {
         Circle()
-            .fill(.white)
+            .fill(self.isClose ? Color.white : Color.white.opacity(0.8))
+            .animation(.easeInOut(duration: 0.5), value: isClose)
             .shadow(radius: 10)
             .padding()
             .frame(width: circleSize(), height: circleSize())
+    }
+    
+    private var isClose: Bool {
+        rssi > closeProximityThreshold
     }
     
     private func circleSize() -> CGFloat {
