@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct ProximityCircleView: View {
-    @Binding var rssi: Int
+    var rssi: Int
     var geometry: GeometryProxy
     private let closeProximityThreshold = -40
     
     private var isClose: Bool {
        rssi > closeProximityThreshold
+    }
+    
+    private var circleSize: CGFloat {
+        let normalizedRSSI = min(max(1.0 - (Double(rssi + 100) / 70.0), 0.2), 1.0)
+        return normalizedRSSI * geometry.size.width
     }
     
     var body: some View {
@@ -26,13 +31,9 @@ struct ProximityCircleView: View {
                     .opacity(isClose ? 1 : 0)
             )
             .animation(.easeInOut(duration: 0.5), value: isClose)
+            .animation(.easeInOut, value: circleSize)
             .shadow(radius: 10)
             .padding()
-            .frame(width: circleSize(), height: circleSize())
-    }
-    
-    private func circleSize() -> CGFloat {
-        let normalizedRSSI = min(max(1.0 - (Double(rssi + 100) / 70.0), 0.2), 1.0)
-        return normalizedRSSI * geometry.size.width
+            .frame(width: circleSize, height: circleSize)
     }
 }

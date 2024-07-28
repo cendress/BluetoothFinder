@@ -12,6 +12,8 @@ struct DeviceLocationView: View {
     @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: DeviceLocationViewModel
     
+    var device: BluetoothDevice
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -49,5 +51,5 @@ struct DeviceLocationView: View {
 #Preview {
     let sampleDevice = BluetoothDevice(id: UUID(), name: "Router", rssi: 0, txPower: nil)
     
-    return DeviceLocationView(viewModel: DeviceLocationViewModel(device: sampleDevice))
+    return DeviceLocationView(viewModel: DeviceLocationViewModel(device: sampleDevice), device: sampleDevice)
 }
