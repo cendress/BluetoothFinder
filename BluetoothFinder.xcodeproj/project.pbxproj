@@ -16,7 +16,9 @@
 		9DD643552C551AC600CF4FBF /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643542C551AC600CF4FBF /* DeviceListView.swift */; };
 		9DD643572C551F5500CF4FBF /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643562C551F5500CF4FBF /* BluetoothManager.swift */; };
 		9DD6435C2C55313700CF4FBF /* DeviceLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */; };
-		9DD6435E2C5654F500CF4FBF /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6435D2C5654F500CF4FBF /* DeviceRow.swift */; };
+		9DD6435E2C5654F500CF4FBF /* DeviceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6435D2C5654F500CF4FBF /* DeviceRowView.swift */; };
+		9DD643602C5655AC00CF4FBF /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */; };
+		9DD643622C5655ED00CF4FBF /* EmptyDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +32,9 @@
 		9DD643542C551AC600CF4FBF /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
 		9DD643562C551F5500CF4FBF /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLocationView.swift; sourceTree = "<group>"; };
-		9DD6435D2C5654F500CF4FBF /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		9DD6435D2C5654F500CF4FBF /* DeviceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRowView.swift; sourceTree = "<group>"; };
+		9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
+		9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDeviceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,9 @@
 			children = (
 				9DD6433E2C54FF4700CF4FBF /* ContentView.swift */,
 				9DD643542C551AC600CF4FBF /* DeviceListView.swift */,
-				9DD6435D2C5654F500CF4FBF /* DeviceRow.swift */,
+				9DD6435D2C5654F500CF4FBF /* DeviceRowView.swift */,
+				9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */,
+				9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */,
 				9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */,
 			);
 			path = Views;
@@ -205,9 +211,11 @@
 			files = (
 				9DD643532C55189300CF4FBF /* DeviceListViewModel.swift in Sources */,
 				9DD6435C2C55313700CF4FBF /* DeviceLocationView.swift in Sources */,
-				9DD6435E2C5654F500CF4FBF /* DeviceRow.swift in Sources */,
+				9DD6435E2C5654F500CF4FBF /* DeviceRowView.swift in Sources */,
+				9DD643602C5655AC00CF4FBF /* DeviceList.swift in Sources */,
 				9DD643512C5517C900CF4FBF /* BluetoothDevice.swift in Sources */,
 				9DD643552C551AC600CF4FBF /* DeviceListView.swift in Sources */,
+				9DD643622C5655ED00CF4FBF /* EmptyDeviceView.swift in Sources */,
 				9DD6433F2C54FF4700CF4FBF /* ContentView.swift in Sources */,
 				9DD643572C551F5500CF4FBF /* BluetoothManager.swift in Sources */,
 				9DD6433D2C54FF4700CF4FBF /* BluetoothFinderApp.swift in Sources */,

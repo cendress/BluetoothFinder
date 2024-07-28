@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DeviceRow: View {
+struct DeviceRowView: View {
     var device: BluetoothDevice
     
     var body: some View {
@@ -24,5 +24,5 @@ struct DeviceRow: View {
 #Preview {
     let sampleDevice = BluetoothDevice(name: "Personal Computer", rssi: -30, txPower: nil)
     
-    return DeviceRow(device: sampleDevice)
+    return DeviceRowView(device: sampleDevice)
 }
