@@ -12,12 +12,22 @@ struct DeviceRowView: View {
     
     var body: some View {
         HStack {
+            Image(systemName: "dot.radiowaves.left.and.right")
+                .foregroundColor(.blue)
+                .padding(.trailing, 8)
+            
             Text(device.name)
+                .font(.headline)
+                .foregroundColor(.primary)
             
             Spacer()
             
             Text("RSSI: \(device.rssi)")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .padding(.leading, 8)
         }
+        .padding()
     }
 }
 
