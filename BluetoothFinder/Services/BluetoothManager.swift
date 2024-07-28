@@ -33,6 +33,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         let txPower = advertisementData[CBAdvertisementDataTxPowerLevelKey] as? Int
         let newName = peripheral.name ?? "Unknown"
+        
         if let index = discoveredDevices.firstIndex(where: {$0.name == newName}) {
             discoveredDevices[index].rssi = RSSI.intValue
         } else {

@@ -15,6 +15,7 @@ struct DistanceInformationView: View {
             if let txPower = device.txPower {
                 Text("Estimated Distance: \(formattedDistance(txPower: txPower))")
             } else {
+                // Display VStack when the TX power of a device can't be found
                 VStack {
                     Image(systemName: "exclamationmark.triangle")
                         .foregroundColor(.orange)

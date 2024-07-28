@@ -13,6 +13,7 @@ struct DeviceListView: View {
     var body: some View {
         Group {
             if viewModel.devices.isEmpty {
+                // Show text prompting the user to press the scan button when the list is empty
                 EmptyDeviceView()
             } else {
                 DeviceList(devices: viewModel.devices)

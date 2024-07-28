@@ -28,9 +28,12 @@ class HapticManager {
             return
         }
         
+        // Normalize the RSSI value to a scale of 0 to 1 and create haptic parameters
         let normalizedRSSI = 1 - min(max(Double(rssi) / -100, 0), 1)
         let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(normalizedRSSI))
         let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(normalizedRSSI))
+        
+        // Create a continuous haptic event with the specified intensity and sharpness
         let event = CHHapticEvent(eventType: .hapticContinuous, parameters: [intensity, sharpness], relativeTime: 0, duration: .infinity)
         
         do {
@@ -42,6 +45,7 @@ class HapticManager {
         }
     }
     
+    // Necessary to stop the engine running when the view gets dismissed
     func stopHaptics() {
         engine?.stop { error in
             if let error = error {
