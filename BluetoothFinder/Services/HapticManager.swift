@@ -11,10 +11,6 @@ import SwiftUI
 class HapticManager {
     private var engine: CHHapticEngine?
     
-    init() {
-        prepareHaptics()
-    }
-    
     private func prepareHaptics() {
         do {
             engine = try CHHapticEngine()
@@ -25,6 +21,8 @@ class HapticManager {
     }
     
     func performHapticFeedback(fromRSSI rssi: Int) {
+        prepareHaptics()
+        
         guard let engine = engine, CHHapticEngine.capabilitiesForHardware().supportsHaptics else {
             print("Haptic feedback is not supported on this device.")
             return
