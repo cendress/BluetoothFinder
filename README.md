@@ -35,11 +35,11 @@ The design of the BluetoothFinder app emphasizes user experience, technical robu
 2. Open the project in Xcode.
 3. Run the app on a compatible device or simulator.
 
+## Future Improvements
+- Enhance the distance calculation algorithm for better accuracy.
+- Provide options to filter and sort the device list.
+
 ## Screenshots
 ![01](https://github.com/user-attachments/assets/0035d159-4621-4ec3-90fb-53eb66bc1ada)
 ![02](https://github.com/user-attachments/assets/46a5291f-dfb3-4575-9b5c-bcdc1c2bd3e9)
 ![03](https://github.com/user-attachments/assets/53107bfa-05c7-4bec-a83a-a04c6a5b6aa8)
-
-## Future Improvements
-- Enhance the distance calculation algorithm for better accuracy.
-- Provide options to filter and sort the device list.
