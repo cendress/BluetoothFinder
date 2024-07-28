@@ -37,11 +37,11 @@ struct DeviceLocationView: View {
                 DistanceInformationView(device: device)
             }
             .position(x: geometry.size.width / 2, y: geometry.size.height / 2)
-            .onAppear(perform: viewModel.startHaptics)
-            .onDisappear(perform: viewModel.stopHaptics)
+            .onAppear { viewModel.startHaptics() }
+            .onDisappear { viewModel.stopHaptics() }
         }
         .background(backgroundColor)
-        .animation(.easeInOut(duration: 0.3), value: device.rssi) 
+        .animation(.easeInOut(duration: 0.3), value: device.rssi)
         .navigationTitle("Device Location")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
@@ -60,6 +60,6 @@ struct DeviceLocationView: View {
 
 //#Preview {
 //    let sampleDevice = BluetoothDevice(id: UUID(), name: "Router", rssi: 0, txPower: nil)
-//    
+//
 //    return DeviceLocationView(viewModel: DeviceLocationViewModel(device: sampleDevice), device: sampleDevice)
 //}
