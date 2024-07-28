@@ -10,7 +10,7 @@ The BluetoothFinder app utilizes the Model-View-ViewModel (MVVM) architecture, w
 - **Model (`BluetoothDevice`)**: Represents the data model for a Bluetooth device, storing properties like name, RSSI, and TX power. The model is a plain Swift structure, making it lightweight and efficient for passing data.
 - **ViewModel (`DeviceListViewModel` and `DeviceLocationViewModel`)**: Acts as the intermediary between the views and the model, handling all the logic for device discovery and state changes. The view model is responsible for initiating Bluetooth scanning, responding to updates, and calculating proximity-based changes.
 - **View (`DeviceListView` and `DeviceLocationView`)**: Displays the user interface. The views observe the view models and react to changes. This includes rendering lists of devices and dynamically updating proximity visualizations.
-- **Services (`BluetoothManager`)**: Manages Bluetooth operations, including scanning for devices. This separation ensures that the Bluetooth-specific code does not clutter the view model, adhering to single responsibility principles.
+- **Services (`BluetoothManager` and `HapticManager`)**: Manages Bluetooth and haptic operations, including scanning for devices and performing haptics. This separation ensures that the Bluetooth and haptic-specific code does not clutter the view model, adhering to single responsibility principles.
 
 ## Design Decisions
 The design of the BluetoothFinder app emphasizes user experience, technical robustness, and maintainability:
