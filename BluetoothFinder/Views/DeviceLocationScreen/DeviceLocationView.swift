@@ -17,7 +17,7 @@ struct DeviceLocationView: View {
             VStack {
                 Spacer()
                 
-                ProximityCircleView(viewModel: viewModel, geometry: geometry)
+                ProximityCircleView(rssi: $viewModel.device.rssi, geometry: geometry)
                 
                 Spacer()
                 
