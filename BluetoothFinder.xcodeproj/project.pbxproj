@@ -20,6 +20,9 @@
 		9DD643602C5655AC00CF4FBF /* DeviceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */; };
 		9DD643622C5655ED00CF4FBF /* EmptyDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */; };
 		9DD643672C5662B900CF4FBF /* DistanceInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643662C5662B900CF4FBF /* DistanceInformationView.swift */; };
+		9DD6436A2C5667C100CF4FBF /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643692C5667C000CF4FBF /* HapticManager.swift */; };
+		9DD6436C2C56680E00CF4FBF /* ProximityCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6436B2C56680E00CF4FBF /* ProximityCircleView.swift */; };
+		9DD6436E2C56686500CF4FBF /* DeviceLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6436D2C56686500CF4FBF /* DeviceLocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		9DD6435F2C5655AC00CF4FBF /* DeviceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceList.swift; sourceTree = "<group>"; };
 		9DD643612C5655ED00CF4FBF /* EmptyDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDeviceView.swift; sourceTree = "<group>"; };
 		9DD643662C5662B900CF4FBF /* DistanceInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceInformationView.swift; sourceTree = "<group>"; };
+		9DD643692C5667C000CF4FBF /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		9DD6436B2C56680E00CF4FBF /* ProximityCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityCircleView.swift; sourceTree = "<group>"; };
+		9DD6436D2C56686500CF4FBF /* DeviceLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9DD643522C55189300CF4FBF /* DeviceListViewModel.swift */,
+				9DD6436D2C56686500CF4FBF /* DeviceLocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				9DD643562C551F5500CF4FBF /* BluetoothManager.swift */,
+				9DD643692C5667C000CF4FBF /* HapticManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 			children = (
 				9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */,
 				9DD643662C5662B900CF4FBF /* DistanceInformationView.swift */,
+				9DD6436B2C56680E00CF4FBF /* ProximityCircleView.swift */,
 			);
 			path = DeviceLocationScreen;
 			sourceTree = "<group>";
@@ -234,10 +243,13 @@
 				9DD643672C5662B900CF4FBF /* DistanceInformationView.swift in Sources */,
 				9DD643602C5655AC00CF4FBF /* DeviceList.swift in Sources */,
 				9DD643512C5517C900CF4FBF /* BluetoothDevice.swift in Sources */,
+				9DD6436C2C56680E00CF4FBF /* ProximityCircleView.swift in Sources */,
 				9DD643552C551AC600CF4FBF /* DeviceListView.swift in Sources */,
 				9DD643622C5655ED00CF4FBF /* EmptyDeviceView.swift in Sources */,
 				9DD6433F2C54FF4700CF4FBF /* ContentView.swift in Sources */,
 				9DD643572C551F5500CF4FBF /* BluetoothManager.swift in Sources */,
+				9DD6436E2C56686500CF4FBF /* DeviceLocationViewModel.swift in Sources */,
+				9DD6436A2C5667C100CF4FBF /* HapticManager.swift in Sources */,
 				9DD6433D2C54FF4700CF4FBF /* BluetoothFinderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
