@@ -23,6 +23,7 @@
 		9DD6436A2C5667C100CF4FBF /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643692C5667C000CF4FBF /* HapticManager.swift */; };
 		9DD6436C2C56680E00CF4FBF /* ProximityCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6436B2C56680E00CF4FBF /* ProximityCircleView.swift */; };
 		9DD6436E2C56686500CF4FBF /* DeviceLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD6436D2C56686500CF4FBF /* DeviceLocationViewModel.swift */; };
+		9DD643722C56F5A300CF4FBF /* ProximityMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD643712C56F5A300CF4FBF /* ProximityMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		9DD643692C5667C000CF4FBF /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		9DD6436B2C56680E00CF4FBF /* ProximityCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityCircleView.swift; sourceTree = "<group>"; };
 		9DD6436D2C56686500CF4FBF /* DeviceLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceLocationViewModel.swift; sourceTree = "<group>"; };
+		9DD643712C56F5A300CF4FBF /* ProximityMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximityMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				9DD6435B2C55313700CF4FBF /* DeviceLocationView.swift */,
 				9DD643662C5662B900CF4FBF /* DistanceInformationView.swift */,
 				9DD6436B2C56680E00CF4FBF /* ProximityCircleView.swift */,
+				9DD643712C56F5A300CF4FBF /* ProximityMessageView.swift */,
 			);
 			path = DeviceLocationScreen;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				9DD6435C2C55313700CF4FBF /* DeviceLocationView.swift in Sources */,
 				9DD6435E2C5654F500CF4FBF /* DeviceRowView.swift in Sources */,
 				9DD643672C5662B900CF4FBF /* DistanceInformationView.swift in Sources */,
+				9DD643722C56F5A300CF4FBF /* ProximityMessageView.swift in Sources */,
 				9DD643602C5655AC00CF4FBF /* DeviceList.swift in Sources */,
 				9DD643512C5517C900CF4FBF /* BluetoothDevice.swift in Sources */,
 				9DD6436C2C56680E00CF4FBF /* ProximityCircleView.swift in Sources */,

@@ -19,10 +19,7 @@ struct DeviceLocationView: View {
                 
                 ProximityCircleView(rssi: $viewModel.device.rssi, geometry: geometry)
                 
-                Text(viewModel.proximityMessage)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
+                ProximityMessageView(viewModel: viewModel)
                 
                 Spacer()
                 
