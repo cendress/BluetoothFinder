@@ -14,6 +14,15 @@ struct DeviceLocationView: View {
     
     var device: BluetoothDevice
     
+    private var backgroundColor: Color {
+        device.rssi > -60 ? .green : .red
+    }
+    
+    init(device: BluetoothDevice) {
+        self.device = device
+        _viewModel = StateObject(wrappedValue: DeviceLocationViewModel(device: device))
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -21,9 +30,9 @@ struct DeviceLocationView: View {
                 
                 ProximityCircleView(rssi: device.rssi, geometry: geometry)
                 
-                ProximityMessageView(viewModel: viewModel)
-                
                 Spacer()
+                
+                ProximityMessageView(device: device)
                 
                 DistanceInformationView(device: device)
             }
@@ -31,7 +40,7 @@ struct DeviceLocationView: View {
             .onAppear(perform: viewModel.startHaptics)
             .onDisappear(perform: viewModel.stopHaptics)
         }
-        .background(viewModel.backgroundColor)
+        .background(backgroundColor)
         .navigationTitle("Device Location")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
@@ -48,8 +57,8 @@ struct DeviceLocationView: View {
     }
 }
 
-#Preview {
-    let sampleDevice = BluetoothDevice(id: UUID(), name: "Router", rssi: 0, txPower: nil)
-    
-    return DeviceLocationView(viewModel: DeviceLocationViewModel(device: sampleDevice), device: sampleDevice)
-}
+//#Preview {
+//    let sampleDevice = BluetoothDevice(id: UUID(), name: "Router", rssi: 0, txPower: nil)
+//    
+//    return DeviceLocationView(viewModel: DeviceLocationViewModel(device: sampleDevice), device: sampleDevice)
+//}

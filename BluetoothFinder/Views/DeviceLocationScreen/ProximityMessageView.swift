@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ProximityMessageView: View {
-    @ObservedObject var viewModel: DeviceLocationViewModel
+    var device: BluetoothDevice
     
     var body: some View {
-        Text(viewModel.proximityMessage)
+        Text(proximityMessage)
             .font(.title)
             .fontWeight(.bold)
             .padding()
             .transition(.opacity)
-            .animation(.easeInOut(duration: 0.5), value: viewModel.proximityMessage)
+            .animation(.easeInOut(duration: 0.5), value: proximityMessage)
+    }
+    
+    private var proximityMessage: String {
+        switch device.rssi {
+        case -40...0:
+            return "You're very close!"
+        case -60..<(-40):
+            return "Getting closer..."
+        case -80..<(-60):
+            return "Still far away..."
+        default:
+            return "Very far away..."
+        }
     }
 }
