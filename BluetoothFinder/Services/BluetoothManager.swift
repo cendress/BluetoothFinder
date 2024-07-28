@@ -26,7 +26,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate {
     
     func startScanning() {
         // May want to add some scanning filters
-        centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerRestoredStateScanOptionsKey : NSNumber(value: false)])
+        centralManager.scanForPeripherals(withServices: nil, options: [CBCentralManagerRestoredStateScanOptionsKey : NSNumber(value: false)]) // Setting this to false will cause excess battery usage
     }
     
     // Triggers when a peripheral is found

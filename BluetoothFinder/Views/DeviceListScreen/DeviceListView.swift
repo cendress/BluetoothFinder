@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeviceListView: View {
-    @StateObject var viewModel: DeviceListViewModel
+    @EnvironmentObject var viewModel: DeviceListViewModel
     
     var body: some View {
         Group {
@@ -29,5 +29,5 @@ struct DeviceListView: View {
 }
 
 #Preview {
-    DeviceListView(viewModel: DeviceListViewModel())
+    DeviceListView()
 }
