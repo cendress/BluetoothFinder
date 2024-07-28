@@ -41,6 +41,7 @@ struct DeviceLocationView: View {
             .onDisappear(perform: viewModel.stopHaptics)
         }
         .background(backgroundColor)
+        .animation(.easeInOut(duration: 0.3), value: device.rssi) 
         .navigationTitle("Device Location")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
